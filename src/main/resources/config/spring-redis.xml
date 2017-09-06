@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <description>Jedis Configuration</description>
+    <!-- 加载配置属性文件 -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:properties/redis.properties"/>
+    <!-- 连接池配置 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.pool.maxActive}"/><!-- 队列数 -->
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/><!-- 最大连接数 -->
+        <property name="maxWait" value="${redis.pool.maxWait}"/><!-- 最大分配的对象数 -->
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/><!-- 当调用borrow Object方法时，是否进行有效性检查 -->
+    </bean>
+    <!--  非切片连接池  -->
+    <!--  <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+          <constructor-arg index="0" ref="jedisPoolConfig"/>
+          <constructor-arg index="1" value="${redis.host}"/>
+          <constructor-arg index="2" value="${redis.port}" type="int"/>
+          <constructor-arg index="3" value="${redis.timeout}"/>
+      </bean>-->
+
+    <!-- JedisConnectionFactory -->
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+        <property name="hostName" value="${redis.host}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="timeout" value="${redis.timeout}"/>
+    </bean>
+
+</beans>

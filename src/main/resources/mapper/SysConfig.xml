@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xwbing.dao.SysConfigDao">
+    <resultMap id="resultMap" type="com.xwbing.entity.SysConfig">
+        <id property="id" column="id"/>
+        <result property="creator" column="creator"/>
+        <result property="modifier" column="modifier"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifiedTime" column="modified_time"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <result property="sort" column="sort"/>
+        <result property="code" column="code"/>
+        <result property="value" column="value"/>
+        <result property="name" column="name"/>
+        <result property="isEnable" column="is_enable"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,creator,modifier,create_time,modified_time,is_deleted,sort,code,value,name,is_enable
+    </sql>
+    <!--where 条件组装 -->
+    <insert id="addConfig" parameterType="com.xwbing.entity.SysConfig">
+        INSERT INTO system_config(id,creator,modifier,create_time,modified_time,is_deleted,sort,code,value,name,is_enable)
+        VALUES(#{id},#{creator},#{modifier},#{createTime},#{modifiedTime},#{isDeleted},#{sort},#{code},#{value},#{name},#{isEnable})
+    </insert>
+    <delete id="removeByCode" parameterType="string">
+        DELETE FROM
+        system_config
+        WHERE code=#{code}
+    </delete>
+    <update id="updateValueByCode"  parameterType="map">
+        UPDATE system_config
+        SET value=#{value}
+        WHERE code=#{code}
+    </update>
+
+    <update id="update" parameterType="com.xwbing.entity.SysConfig">
+        UPDATE system_config
+        <set>
+            <if test="creator!=null">creator = #{creator},</if>
+            <if test="modifier!=null">modifier = #{modifier},</if>
+            <if test="createTime!=null">create_time = #{createTime},</if>
+            <if test="modifiedTime!=null">modified_time = #{modifiedTime},</if>
+            <if test="isDeleted!=null">is_deleted = #{isDeleted},</if>
+            <if test="sort!=null">sort = #{sort},</if>
+            <if test="code!=null">code = #{code},</if>
+            <if test="value!=null">value = #{value},</if>
+            <if test="name!=null">name = #{name},</if>
+            <if test="isEnable!=null">is_enable = #{isEnable},</if>
+        </set>
+        where id= #{id}
+    </update>
+    <select id="findById" parameterType="string" resultMap="resultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        system_config
+        WHERE id=#{id}
+    </select>
+    <select id="findByCode" parameterType="string" resultMap="resultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        system_config
+        WHERE code=#{code}
+    </select>
+
+</mapper>
