@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 浙江卓锐科技股份有限公司 版权所有 ? Copyright 2016<br/>
- * 说明: <br/>
+ * 浙江卓锐科技股份有限公司 版权所有 ? Copyright 2016<
+ * 说明:
  * 项目名称: spring-demo <br/>
- * 创建日期: 2017年4月20日 下午3:57:05 <br/>
+ * 创建日期: 2017年4月20日 下午3:57:05
  * 作者: xwb
  */
 @Api(tags = "swaggerApi",description = "用于测试")
