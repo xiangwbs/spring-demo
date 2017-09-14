@@ -12,7 +12,7 @@ import java.net.URLEncoder;
 /**
  * 说明:编码解码工具类
  * 创建日期: 2016年11月29日 上午10:30:34
- * 作者: xwb
+ * 作者: xiangwb
  */
 public class EncodeUtils {
     private static final String DEFAULT_URL_ENCODING = "UTF-8";

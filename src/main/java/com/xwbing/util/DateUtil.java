@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * 说明:日期处理类
  * 创建日期: 2016年12月8日 下午6:18:46
- * 作者: xwb
+ * 作者: xiangwb
  */
 public class DateUtil {
     private static DecimalFormat df = new DecimalFormat("######0.00");

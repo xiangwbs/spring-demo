@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 说明:邮箱属性  <br/>
- * 创建日期: 2016年12月7日 下午1:10:00 <br/>
- * 作者: xwb
+ * 说明:邮箱属性
+ * 创建日期: 2016年12月7日 下午1:10:00
+ * 作者: xiangwb
  */
 public class EmailModel implements Serializable {
     private static final long serialVersionUID = -4511919091646089877L;

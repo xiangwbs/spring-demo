@@ -7,7 +7,7 @@ import java.util.UUID;
  * 
  * 说明:密码工具类
  * 创建日期: 2016年11月29日 上午10:28:36 
- * 作者: xwb
+ * 作者: xiangwb
  */
 public class PassWordUtil {
 	/**

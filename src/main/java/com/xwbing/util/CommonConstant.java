@@ -1,9 +1,9 @@
 package com.xwbing.util;
 
 /**
- * 说明:公共常量 <br/>
- * 创建日期: 2016年12月9日 上午9:51:16 <br/>
- * 作者: xwb
+ * 说明:公共常量
+ * 创建日期: 2016年12月9日 上午9:51:16
+ * 作者: xiangwb
  */
 public class CommonConstant {
     /**

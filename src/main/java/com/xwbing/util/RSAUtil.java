@@ -21,8 +21,8 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * RSA的算法中有两个钥匙，一个公钥一个私钥。 用公钥加密的数据(明文)，只有私钥能解开(密文)
  * 私钥密钥字符串使用支付宝RSA密钥生成器SHAwithRSA生成
- * 创建日期: 2016年10月28日 上午9:47:02 <br/>
- * 作者: xwb
+ * 创建日期: 2016年10月28日 上午9:47:02
+ * 作者: xiangwb
  */
 public class RSAUtil {
     public static final String KEY_ALGORITHM = "RSA";

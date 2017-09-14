@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
 /**
  * 说明:获取登录ip工具类
  * 创建日期: 2016年11月29日 上午10:30:20 
- * 作者: xwb
+ * 作者: xiangwb
  */
 
 public class IpUtil {

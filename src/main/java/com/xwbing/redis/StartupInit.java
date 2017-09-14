@@ -12,9 +12,9 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * 说明:启动的时候加载方法 <br/>
- * 项目名称: spring-demo<br/>
- * 创建日期: 2016年9月27日 下午1:25:47 <br/>
+ * 说明:启动的时候加载方法
+ * 项目名称: spring-demo
+ * 创建日期: 2016年9月27日 下午1:25:47
  * 作者: xiangwb
  */
 @Service
