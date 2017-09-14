@@ -21,7 +21,9 @@
     </context:component-scan>
     <!-- 配置mvc注解扫描 -->
     <mvc:annotation-driven>
+        <!-- 设置使用默认的消息转换器 -->
         <mvc:message-converters register-defaults="true">
+            <!-- 配置Spring的转换器 -->
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <!-- 解决返回String时中文乱码 -->
                 <constructor-arg value="UTF-8"/>
@@ -34,8 +36,8 @@
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>
+                <value>text/html;charset=UTF-8</value><!-- 避免IE出现下载JSON文件的情况 -->
                 <value>application/json;charset=UTF-8</value>
-                <value>text/html;charset=UTF-8</value>
                 <value>text/plain;charset=UTF-8</value>
             </list>
         </property>
