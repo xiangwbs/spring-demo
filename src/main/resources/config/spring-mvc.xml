@@ -37,8 +37,8 @@
         <property name="supportedMediaTypes">
             <list>
                 <value>text/html;charset=UTF-8</value><!-- 避免IE出现下载JSON文件的情况 -->
-                <value>application/json;charset=UTF-8</value>
-                <value>text/plain;charset=UTF-8</value>
+                <value>application/json;charset=UTF-8</value><!-- JSON数据格式 -->
+                <value>text/plain;charset=UTF-8</value><!-- 纯文本格式 -->
             </list>
         </property>
     </bean>
