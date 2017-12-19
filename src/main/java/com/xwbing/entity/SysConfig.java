@@ -28,5 +28,5 @@ public class SysConfig extends BaseEntity {
     /**
      * 是否启用
      */
-    private String isEnable;
+    private String enable;
 }

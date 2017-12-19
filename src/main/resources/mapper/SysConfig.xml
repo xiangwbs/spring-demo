@@ -12,7 +12,7 @@
         <result property="code" column="code"/>
         <result property="value" column="value"/>
         <result property="name" column="name"/>
-        <result property="isEnable" column="is_enable"/>
+        <result property="enable" column="is_enable"/>
     </resultMap>
     <sql id="Base_Column_List">
         id,creator,modifier,create_time,modified_time,is_deleted,sort,code,value,name,is_enable
@@ -20,7 +20,7 @@
     <!--where 条件组装 -->
     <insert id="addConfig" parameterType="com.xwbing.entity.SysConfig">
         INSERT INTO system_config(id,creator,modifier,create_time,modified_time,is_deleted,sort,code,value,name,is_enable)
-        VALUES(#{id},#{creator},#{modifier},#{createTime},#{modifiedTime},#{isDeleted},#{sort},#{code},#{value},#{name},#{isEnable})
+        VALUES(#{id},#{creator},#{modifier},#{createTime},#{modifiedTime},#{isDeleted},#{sort},#{code},#{value},#{name},#{enable})
     </insert>
     <delete id="removeByCode" parameterType="string">
         DELETE FROM
@@ -45,7 +45,7 @@
             <if test="code!=null">code = #{code},</if>
             <if test="value!=null">value = #{value},</if>
             <if test="name!=null">name = #{name},</if>
-            <if test="isEnable!=null">is_enable = #{isEnable},</if>
+            <if test="enable!=null">is_enable = #{enable},</if>
         </set>
         where id= #{id}
     </update>

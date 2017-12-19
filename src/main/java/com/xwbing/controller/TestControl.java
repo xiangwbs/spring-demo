@@ -70,14 +70,14 @@ public class TestControl {
         SysConfig one = new SysConfig();
         one.setId(PassWordUtil.createId());
         one.setCode("aaa");
-        one.setIsEnable("Y");
+        one.setEnable("Y");
         one.setName("aaa");
         one.setValue("aaa");
         sysConfigService.addConfig(one);
         SysConfig two = new SysConfig();
         two.setId(PassWordUtil.createId());
         two.setCode("bbb");
-        two.setIsEnable("Y");
+        two.setEnable("Y");
         two.setName("bbb");
         two.setValue("bbb");
         sysConfigService.addConfig(two);

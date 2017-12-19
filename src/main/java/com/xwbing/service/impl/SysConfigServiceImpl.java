@@ -107,7 +107,7 @@ public class SysConfigServiceImpl implements SysConfigService {
             throw new BusinessException("该配置不存在");
         }
         old.setValue(sysConfig.getValue());
-        old.setIsEnable(sysConfig.getIsEnable());
+        old.setEnable(sysConfig.getEnable());
         old.setName(sysConfig.getName());
         old.setCode(sysConfig.getCode());
         old.setModifiedTime(new Date());

@@ -27,13 +27,13 @@ public class KdniaoUtil {
      * @param charset 编码方式
      * @throws Exception
      */
-    public static String MD5(String str, String charset) throws Exception {
+    private static String MD5(String str, String charset) throws Exception {
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(str.getBytes(charset));
         byte[] result = md.digest();
-        StringBuffer sb = new StringBuffer(32);
-        for (int i = 0; i < result.length; i++) {
-            int val = result[i] & 0xff;
+        StringBuilder sb = new StringBuilder(32);
+        for (byte aResult : result) {
+            int val = aResult & 0xff;
             if (val <= 0xf) {
                 sb.append("0");
             }
@@ -49,16 +49,12 @@ public class KdniaoUtil {
      * @param charset 编码方式
      * @throws UnsupportedEncodingException
      */
-    public static String base64(String str, String charset)
-            throws UnsupportedEncodingException {
-        String encoded = base64Encode(str.getBytes(charset));
-        return encoded;
+    private static String base64(String str, String charset) throws UnsupportedEncodingException {
+        return base64Encode(str.getBytes(charset));
     }
 
-    public static String urlEncoder(String str, String charset)
-            throws UnsupportedEncodingException {
-        String result = URLEncoder.encode(str, charset);
-        return result;
+    public static String urlEncoder(String str, String charset) throws UnsupportedEncodingException {
+        return URLEncoder.encode(str, charset);
     }
 
     /**
@@ -68,10 +64,9 @@ public class KdniaoUtil {
      * @param keyValue Appkey
      * @param charset  编码方式
      * @return DataSign签名
-     * @throws UnsupportedEncodingException ,Exception
+     * @throws Exception
      */
-    public static String encrypt(String content, String keyValue, String charset)
-            throws UnsupportedEncodingException, Exception {
+    public static String encrypt(String content, String keyValue, String charset) throws Exception {
         if (keyValue != null) {
             return base64(MD5(content + keyValue, charset), charset);
         }
@@ -151,15 +146,15 @@ public class KdniaoUtil {
         return result.toString();
     }
 
-    public static char[] base64EncodeChars = new char[]{'A', 'B', 'C', 'D',
+    private static char[] base64EncodeChars = new char[]{'A', 'B', 'C', 'D',
             'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
             'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
             'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
             'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3',
             '4', '5', '6', '7', '8', '9', '+', '/'};
 
-    public static String base64Encode(byte[] data) {
-        StringBuffer sb = new StringBuffer();
+    private static String base64Encode(byte[] data) {
+        StringBuilder sb = new StringBuilder();
         int len = data.length;
         int i = 0;
         int b1, b2, b3;
