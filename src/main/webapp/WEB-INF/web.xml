@@ -70,7 +70,7 @@
         <servlet-name>CaptchaServlet</servlet-name>
         <url-pattern>/servlet/captchaCode</url-pattern>
     </servlet-mapping>
-    <!-- 设置session失效时间 -->
+    <!-- 设置session失效时间 分-->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
